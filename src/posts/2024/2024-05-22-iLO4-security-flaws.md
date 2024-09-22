@@ -4,6 +4,8 @@ title: "Multiple security flaws in HPE iLO 4"
 tags: research vulnerability-disclosure english
 ---
 
+{% assign asciiart_padding = 1 %}
+{% assign asciiart_align = 'left' %}
 ## .--[ 0 - Context ]-----------------------------------
 
 A couple of months ago, I bought a second-hand `HPE Proliant 360P Gen8` server
@@ -45,7 +47,7 @@ noise level that one of these devices produces with its factory settings. Since
 later firmware versions do not allow this modification[1][2], many people prefer
 to sacrifice updates for the ability to quiet down their server.
 
-{% asciiart left,4 %}
+{% asciiart %}
 [0] https://github.com/kendallgoto/ilo4_unlock
 [1] https://www.reddit.com/r/homelab/comments/sx3ldo/comment/hxze895/
 [2] https://www.reddit.com/r/homelab/comments/hix44v/comment/hxnodss/
@@ -124,7 +126,7 @@ As explained above, the session cookie is not included in the HTTP headers.
 However, due to the nature of the endpoint, it is present in the URL.
 
 
-{% asciiart left,4 %}
+{% asciiart %}
 [0] https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content
 [1] tohex(){ printf '%s' "$1" | xxd -p -u }
 {% endasciiart %}

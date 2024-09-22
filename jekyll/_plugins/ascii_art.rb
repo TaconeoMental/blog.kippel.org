@@ -26,16 +26,18 @@ module Jekyll
       def normalize_lengths(text)
         # Normalize line lengths to maintain picture's shape when right aligned
         lines = text.lines.map(&:chomp).map(&:rstrip)
+        # The first line is usually empty because the picture starts one line
+        # after the {% asciiart %} block
         if lines[0].empty?
           lines = lines.drop(1)
         end
-        max_length = lines.map(&:length).max
+        max_length = lines.map(&:length).max # Longest line
         padded_lines = lines.map { |line| line.ljust(max_length) }
         padded_lines.join("\n")
       end
 
       def apply_padding(text, align, padding)
-        lines = text.lines.map(&:chomp).map(&:rstrip)
+        lines = text.lines.map(&:chomp)
         padded_lines = lines.map do |line|
           if align == 'left'
             line = line.prepend(" " * padding)
@@ -64,7 +66,7 @@ module Jekyll
       def render(context)
         real_padding = get_padding(context)
         real_align = get_align(context)
-        content = normalize_lengths(escape_xhtml(super(context)))
+        content = escape_xhtml(normalize_lengths(super(context)))
         content = apply_padding(content, align=real_align, padding=real_padding)
         "<pre class=\"ascii-art-#{real_align}\">#{content}</pre>"
       end
