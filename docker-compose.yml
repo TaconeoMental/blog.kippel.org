@@ -10,10 +10,11 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - $PWD/server/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
-      - $PWD/server/root:/srv
       - caddy_data:/data
       - caddy_config:/config
+      - $PWD/server/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - $PWD/server/root:/srv
+      - $PWD/server/caddy/certs:/data/certs
 
 volumes:
   caddy_data:

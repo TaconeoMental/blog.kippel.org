@@ -29,7 +29,7 @@ blog.kippel.org {
         file_server
     }
 
-    tls /usr/local/share/cf_certificate.pem /usr/local/share/cf_certificate.key
+    tls "/data/certs/cf_certificate.pem" "/data/certs/cf_certificate.key"
     encode zstd gzip
     root * /srv/
     file_server {
