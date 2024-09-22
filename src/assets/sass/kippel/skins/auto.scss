@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+// Base dark mode colors
+$dm-brand-color:           rgb(246, 7, 97) !default;
+$dm-brand-color-light2:    rgb(255, 139, 182) !default;
+$dm-brand-color-light:     lighten($dm-brand-color, 40%) !default;
+$dm-brand-color-dark:      darken($dm-brand-color, 30%) !default;
+
+$dm-site-title-color:      $dm-brand-color !default;
+
+//$dm-text-color:            $dm-brand-color !default;
+$dm-text-color:            rgb(255, 69, 137) !default;
+$dm-background-color:      #0a0e14 !default;
+$dm-code-background-color: #0d090c !default;
+
+//$dm-link-base-color:       $dm-brand-color !default;
+$dm-link-base-color:       rgb(238, 102, 153) !default;
+$dm-link-visited-color:    $dm-brand-color-light2 !default;
+$dm-link-hover-color:      $dm-text-color !default;
+
+$dm-border-color-01:       #e389b4 !default;
+$dm-border-color-02:       lighten($dm-brand-color, 35%) !default;
+$dm-border-color-03:       $dm-brand-color-dark !default;
+
+$dm-table-text-color:      lighten($dm-text-color, 18%) !default;
+$dm-table-zebra-color:     lighten($dm-brand-color, 46%) !default;
+$dm-table-header-bg-color: lighten($dm-brand-color, 43%) !default;
+$dm-table-header-border:   lighten($dm-brand-color, 37%) !default;
+$dm-table-border-color:    $dm-border-color-01 !default;
+
+@import "kippel/skins/syntax";
+@include dm-highlight;
+
+// Color theme interface
+
+$brand-color:           $dm-brand-color;
+$brand-color-light:     $dm-brand-color-light;
+$brand-color-dark:      $dm-brand-color-dark;
+
+$site-title-color:      $dm-site-title-color;
+
+$text-color:            $dm-text-color;
+$background-color:      $dm-background-color;
+$code-background-color: $dm-code-background-color;
+
+$link-base-color:       $dm-link-base-color;
+$link-visited-color:    $dm-link-visited-color;
+$link-hover-color:      $dm-link-hover-color;
+
+$border-color-01:       $dm-border-color-01;
+$border-color-02:       $dm-border-color-02;
+$border-color-03:       $dm-border-color-03;
+
+$table-text-color:      $dm-table-text-color;
+$table-zebra-color:     $dm-table-zebra-color;
+$table-header-bg-color: $dm-table-header-bg-color;
+$table-header-border:   $dm-table-header-border;
+$table-border-color:    $dm-table-border-color;
+

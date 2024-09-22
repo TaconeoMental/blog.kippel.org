@@ -1,0 +1,24 @@
+services:
+  jekyll:
+    image: jekyll/jekyll:latest
+    command: tail -F /dev/null
+    volumes:
+      - ./jekyll:/srv/jekyll
+  caddy:
+    image: caddy:2.6.4
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $PWD/server/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - $PWD/server/root:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+    external: true
+    name: kippel.org_caddy_data
+  caddy_config:
+    external: true
+    name: kippel.org_caddy_config
