@@ -15,5 +15,6 @@ jobs:
     # Runs a single command using the runners shell
     - name: Compile site
       run: |
-        git pull
+        ls
+        mv ${GITHUB_WORKSPACE}/* /srv/www/blog.kippel.org/
         just compile
