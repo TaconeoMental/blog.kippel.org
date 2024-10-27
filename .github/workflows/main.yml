@@ -14,4 +14,6 @@ jobs:
           cp -r ${GITHUB_WORKSPACE}/* /srv/www/blog.kippel.org/
       - name: Compile site
         working-directory: /srv/www/blog.kippel.org/
-        run: just compile
+        run: |
+          just clean
+          just compile
