@@ -1,0 +1,16 @@
+name: Deploy
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, prod]
+    steps:
+    - uses: actions/checkout@v2
+    # Runs a single command using the runners shell
+    - name: Compile site
+      working-directory: /srv/www/blog.kippel.org
+      run: |
+        git pull
+        just compile
