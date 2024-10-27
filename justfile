@@ -43,7 +43,7 @@ jekyll *ARGS:
     find {{HERE}}/src/ -maxdepth 1 -type f -exec cp -t {{HERE}}/jekyll/ {} +
     just jekyll "jekyll build" && \
         cp -r {{HERE}}/jekyll/_site/* {{HERE}}/server/root/ && \
-        echo "Done"
+        echo "[+] Done"
 
 @clean:
     #!/usr/bin/env bash
