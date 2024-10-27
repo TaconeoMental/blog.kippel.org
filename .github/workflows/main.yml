@@ -7,9 +7,9 @@ jobs:
   deploy:
     runs-on: [self-hosted, prod]
     steps:
-    - name: Compile site
-      working-directory: /srv/www/blog.kippel.org
-      run: |
-        git pull
-        mv ${GITHUB_WORKSPACE}/* /srv/www/blog.kippel.org/
-        just compile
+      - uses: actions/checkout@v4
+        name: Checkout sources
+        with:
+          path: /srv/www/blog.kippel.org
+      - name: Compile site
+        run: just compile
