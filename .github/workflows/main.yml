@@ -9,8 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         name: Checkout sources
-      - name: Compile site
-        run: just compile
       - name: Copy to wwwroot
         run: |
-          cp -r ./jekyll/_site/* /srv/www/blog.kippel.org/server/root/
+          cp -r ${GITHUB_WORKSPACE}/* /srv/www/blog.kippel.org/
+      - name: Compile site
+        run: just compile
