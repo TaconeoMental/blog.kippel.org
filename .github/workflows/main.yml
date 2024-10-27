@@ -6,10 +6,10 @@ on:
 jobs:
   deploy:
     runs-on: [self-hosted, prod]
-	defaults:
-	  run:
-		shell: bash
-		working-directory: /srv/www/blog.kippel.org
+    defaults:
+      run:
+        shell: bash
+        working-directory: /srv/www/blog.kippel.org
     steps:
     - uses: actions/checkout@v2
     # Runs a single command using the runners shell
