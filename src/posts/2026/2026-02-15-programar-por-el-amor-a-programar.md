@@ -116,9 +116,6 @@ a obtener resultados sin atravesar la fricción que nos forma. Y que así, sin
 darnos cuenta, dejemos de construirnos a nosotros mismos mientras construimos
 otras cosas.
 
-
-## .--[ 4 - Panorama actual ]----------------------------
-
 El entorno ha cambiado tan rápido como lo ha hecho esta tecnología.
 
 Todos los días veo gente nueva mostrando proyectos armados en un par de horas
@@ -137,24 +134,22 @@ producto final. Cuando todo gira en torno al resultado, el proceso empieza a
 perder protagonismo, y con él, la parte lenta y silenciosa en donde realmente
 se forma el criterio.
 
-Tal vez siempre fue así y solo ahora lo noto más.
-
 Me pregunto qué va a pasar con las nuevas generaciones. Cuando un niño hoy
 instale Python por primera vez, ¿va a sentir esa fascinación rara de escribir
 una línea y ver que algo pasa en la pantalla? ¿O va a pensar que programar es
 simplemente describir lo que quiere que pase y dejar que otra cosa lo resuelva?
 
-No es una crítica, es una duda.
-
 ¿Va a haber alguien que quiera quedarse horas leyendo documentación solo por el
 placer de entender? ¿O eso se va a volver una rareza, casi una excentricidad?
 
-Tal vez nada de esto importe. Tal vez estoy romantizando algo que nunca fue
-masivo y siempre fuimos pocos los que disfrutábamos esa fricción, pero igual me
-duele pensarlo.
+A veces pienso que tal vez estoy idealizando algo que nunca fue masivo, que
+quizás la mayoría de las personas nunca disfrutó realmente este proceso y que
+yo simplemente tuve la suerte de crecer en un entorno donde sí se valoraba. Tal
+vez lo que está ocurriendo en la actualidad no es una pérdida, sino una
+normalización. Aún así, me duele pensarlo.
 
 
-## .--[ 5 - Problema transversal ]-----------------------
+## .--[ 4 - Más allá del código ]------------------------
 
 Aunque uso la programación como ejemplo, el problema no se limita únicamente a
 ese dominio.
@@ -173,17 +168,44 @@ hacer algo complejo, tenías que atravesar una curva de aprendizaje. **No había
 otra forma**. Ahora el acceso es casi inmediato, y eso es bueno desde cierta
 perspectiva. Democratiza y abre puertas, permitiedo que más personas creen. Sin
 embargo, también reduce la fricción que antes era parte inevitable del
-crecimiento.
+crecimiento. Es natural elegir el camino más corto, siempre lo ha sido.
+Constantemente, a lo largo de la historia, han nacido nuevas herramientas que
+reducen esa fricción. Tal vez la IA no está haciendo nada nuevo en ese sentido
+y solo está llevando esa tendencia a un extremo debido a su gigantesca
+versatilidad.
 
-Entiendo que hay casos donde, desde mi punto de vista, es sin duda un abuso
-maligno de la tecnología (bandas falsas generando ingresos en Spotify, por
-ejemplo), pero por otro lado, ¿quién soy yo para juzgar a alguien que disfruta
-de la música y que recientemente descubrió que también la puede crear?
+Entiendo que hay casos donde el uso de IA es, desde mi punto de vista, sin duda
+un abuso maligno de la tecnología (bandas falsas generando ingresos en Spotify,
+por ejemplo), pero por otro lado, ¿quién soy yo para juzgar a alguien que
+disfruta de la música y que recientemente descubrió que también la puede crear?
 
 Aún tengo opiniones difusas, pero sé que lo que más me marcó a mí no fueron los
 resultados que obtuve, sino las dificultades que tuve que atravesar para llegar
 a ellos. Y cuando veo que esas dificultades ya no son necesarias, no puedo evitar
 preguntarme qué va a ocupar su lugar (si es que hay algo).
+
+
+## .--[ 5 - Cultura, curiosidad y transformación ]------
+
+Me dijeron que el ser humano no está hecho para disfrutar aprender, sino para
+sobrevivir. Que el placer por el conocimiento es un lujo y no algo inherente
+dentro de nosotros. Creo que esto es parcialmente cierto.
+
+Incluso si el aprendizaje apasionado nunca fue unviersal, sí fue estructural en
+algunos espacios. En programación, en ciencia, en arte incluso, la dificultad
+era más una condición técnica que una virtud moral. Hoy esa condición cambió, y
+cuando esa profundidad deja de ser estructural y pasa a ser optativa, la
+cultura inevitablemente se transforma, simplemente porque el entorno ya no nos
+obliga a quedarnos.
+
+Tal vez no sea decadencia y es simplemente otra etapa. Pero cuando algo que era
+central en una cultura deja de ser necesario, inevitablemente cambia la forma
+en que esa cultura se entiende a sí misma.
+
+Si durante años aprender era el único camino para crear y hoy crear puede
+ocurrir sin aprender, algo fundamental cambia en esa comunidad. Obviamente no
+desaparece la curiosidad, pero deja de ser el filtro natural de entrada. Y
+cuando ese filtro cambia, cambia también la identidad del grupo.
 
 
 ## .--[ 6 - Lo que realmente me inquieta ]---------------
@@ -200,3 +222,12 @@ natural del hacer. Quizás nada externo pase si esa etapa empieza a diluirsee,
 pero siento que internamente algo sí cambiaría. Y eso es lo que me pesa al
 final del día: la posibilidad de que, sin darnos cuenta, dejemos de valorar ese
 momento incómodo donde uno todavía no sabe y, aún así, decide quedarse igual.
+
+Puede que no perdamos la capacidad de crear, sino la paciencia necesaria para
+profundizar. Y cuando la cultura deja de celebrar al que insisite y empieza a
+celebrar solo al que produce, no es el código ni los resultados los que se
+transforman, es la forma en la que nos relacionamos con el conocimiento mismo
+la que cambia.
+
+Porque tal vez el verdadero cambio no ocurra en los computadores, sino en
+nosotros.
