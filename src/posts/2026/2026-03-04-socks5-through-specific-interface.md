@@ -41,7 +41,7 @@ So instead of chasing portal endpoints, I forced all SOCKS egress to use `wlan0`
 
 {% highlight bash %}
 root@server$ useradd -m -s /bin/bash socks
-{% endhighlight}
+{% endhighlight %}
 
 ### 2. Create a routing table (100) with default via wlan0
 
@@ -52,7 +52,7 @@ root@server$ WLAN_NET=$(ip -o -f inet route show dev wlan0 scope link | awk '{pr
 root@server$ ip route flush table 100
 root@server$ ip route add "$WLAN_NET" dev wlan0 scope link table 100
 root@server$ ip route add default via "$WLAN_GW" dev wlan0 table 100
-{% endhighlight}
+{% endhighlight %}
 
 ### 3. Mark traffic owned by user socks
 
