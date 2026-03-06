@@ -39,43 +39,44 @@ So instead of chasing portal endpoints, I forced all SOCKS egress to use `wlan0`
 
 ### 1. Dedicated user for the tunnel
 
-```bash
+{% highlight bash %}
 root@server$ useradd -m -s /bin/bash socks
-```
+{% endhighlight}
 
 ### 2. Create a routing table (100) with default via wlan0
 
-```bash
+{% highlight bash %}
 root@server$ WLAN_GW=$(ip route show default dev wlan0 | awk '{print $3}')
 root@server$ WLAN_NET=$(ip -o -f inet route show dev wlan0 scope link | awk '{print $1}')
 
 root@server$ ip route flush table 100
 root@server$ ip route add "$WLAN_NET" dev wlan0 scope link table 100
 root@server$ ip route add default via "$WLAN_GW" dev wlan0 table 100
-```
+{% endhighlight}
 
 ### 3. Mark traffic owned by user socks
 
-```bash
+{% highlight bash %}
 root@server$ iptables -t mangle -A OUTPUT -m owner --uid-owner socks -j MARK --set-mark 0x1
-```
+{% endhighlight %}
 
 ### 4. Route marked packets using table 100
 
-```bash
+{% highlight bash %}
 root@server$ ip rule add fwmark 0x1 lookup 100 priority 100
-```
+{% endhighlight %}
 
 ### 5. Start SOCKS from my client to server
 
-```bash
+{% highlight bash %}
 user@client$ ssh -N -D 127.0.0.1:7890 socks@172.16.200.201
-```
+{% endhighlight %}
 
 ### 6. tcpdump check
 
 From the client:
-```bash
+
+{% highlight bash %}
 user@client$ curl -ki --socks5 127.0.0.1:7890 https://blog.kippel.org
 HTTP/1.1 302 Captive Portal
 Server:
@@ -97,10 +98,11 @@ Connection: close
 <ADDRESS><A HREF="http://www.arubanetworks.com"></A></ADDRESS>
 </BODY>
 </HTML>
-```
+{% endhighlight %}
 
 From the server:
-```bash
+
+{% highlight bash %}
 root@server$ tcpdump -i wlan0 -n
 tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
 listening on wlan0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
@@ -110,22 +112,22 @@ listening on wlan0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 15:01:42.890882 IP 104.21.34.11.443 > 172.16.200.201.60302: Flags [S.], seq 2006562653, ack 712479031, win 24960, options [mss 1260,sackOK,TS val 1556975851 ecr 1789227809 ,nop,wscale 7], length 0
 15:01:42.890934 IP 172.16.200.201.60302 > 104.21.34.11.443: Flags [.], ack 1, win 63, options [nop,nop,TS val 1789227811 ecr 1556975851], length 0
 ...
-```
+{% endhighlight %}
 
 ### 7. Cleanup
 
-```bash
+{% highlight bash %}
 root@server$ ip rule del fwmark 0x1 lookup 100
 root@server$ iptables -t mangle -D OUTPUT -m owner --uid-owner socks -j MARK --set-mark 0x1
 root@server$ ip route flush table 100
 root@server$ userdel -r socks
-```
+{% endhighlight %}
 
 ### Bonus: auto-rebuild table 100 when WiFi changes
 
 When connecting to a new network, `ip rule` and the packet marking stays the same, only `table 100` needs to be rebuilt.
 
-```bash
+{% highlight bash %}
 root@server$ cat /usr/local/sbin/rebuild-table100.sh
 #!/usr/bin/env bash
 set -euo pipefail
@@ -147,7 +149,9 @@ done
 ip route flush table "$TABLE"
 ip route add "$NET" dev "$IFACE" scope link table "$TABLE"
 ip route add default via "$GW" dev "$IFACE" table "$TABLE"
+{% endhighlight %}
 
+{% highlight bash %}
 root@server$ cat /etc/NetworkManager/dispatcher.d/90-table100
 #!/bin/sh
 IFACE="$1"
@@ -161,4 +165,4 @@ case "$IFACE:$ACTION" in
       ip route flush table 100
       ;;
 esac
-```
+{% endhighlight %}
