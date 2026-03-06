@@ -77,7 +77,7 @@ user@client$ ssh -N -D 127.0.0.1:7890 socks@172.16.200.201
 From the client:
 
 {% highlight bash %}
-user@client$ curl -ki --socks5 127.0.0.1:7890 https://blog.kippel.org
+user@client$ curl -ki --socks5-hostname 127.0.0.1:7890 https://blog.kippel.org
 HTTP/1.1 302 Captive Portal
 Server:
 Date: Wed, 21 Dec 2022 10:04:43 GMT
@@ -106,11 +106,12 @@ From the server:
 root@server$ tcpdump -i wlan0 -n
 tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
 listening on wlan0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
-15:01:42.855746 IP 172.16.200.201.45301 > 172.19.100.100.53: 18557+ A? blog.kippel.org. (29)
-15:01:42.855761 IP 172.16.200.201.45301 > 172.19.100.100.53: 7547+ AAAA? blog.kippel.org. (29)
-15:01:42.889385 IP 172.16.200.201.60302 > 104.21.34.11.443: Flags [S], seq 712479030, win 64240, options [mss 1460,sackOK,TS val 1789227809 ecr 0,nop,wscale 10], length 0
-15:01:42.890882 IP 104.21.34.11.443 > 172.16.200.201.60302: Flags [S.], seq 2006562653, ack 712479031, win 24960, options [mss 1260,sackOK,TS val 1556975851 ecr 1789227809 ,nop,wscale 7], length 0
-15:01:42.890934 IP 172.16.200.201.60302 > 104.21.34.11.443: Flags [.], ack 1, win 63, options [nop,nop,TS val 1789227811 ecr 1556975851], length 0
+...
+15:01:42.855746 IP 10.10.10.10.45301 > 10.10.10.1.53: 18557+ A? blog.kippel.org. (29)
+15:01:42.870100 IP 10.10.10.1.53 > 10.10.10.10.45301: 18557 1/0/0 A 104.21.34.11 (45)
+15:01:42.889385 IP 10.10.10.10.60302 > 104.21.34.11.443: Flags [S], seq 712479030, win 64240, options [mss 1460,sackOK,TS val 1789227809 ecr 0,nop,wscale 10], length 0
+15:01:42.890882 IP 104.21.34.11.443 > 10.10.10.10.60302: Flags [S.], seq 2006562653, ack 712479031, win 24960, options [mss 1260,sackOK,TS val 1556975851 ecr 1789227809,nop,wscale 7], length 0
+15:01:42.890934 IP 10.10.10.10.60302 > 104.21.34.11.443: Flags [.], ack 1, win 63, options [nop,nop,TS val 1789227811 ecr 1556975851], length 0
 ...
 {% endhighlight %}
 
