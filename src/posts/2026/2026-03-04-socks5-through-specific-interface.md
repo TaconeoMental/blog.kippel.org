@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Routing SOCKS through specific interface"
+title: "Making ssh -D use a specific outbound interface"
 tags: networking english
 ---
 
