@@ -34,7 +34,6 @@ You _can_, but it's annoying:
 
 So instead of chasing portal endpoints, I forced all SOCKS egress to use `wlan0`, regardless of what the portal does.
 
-
 ## My overcomplicated fix: policy routing only for the SOCKS user (on server)
 
 ### 1. Dedicated user for the tunnel
