@@ -2,6 +2,7 @@
 layout: post
 title: "Kiroku y mi intento de implementar un sistema Zero Knowledge"
 tags: dev security
+published: false
 ---
 
 ## .::0x00::Contexto::.

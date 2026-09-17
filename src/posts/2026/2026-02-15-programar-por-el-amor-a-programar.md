@@ -2,6 +2,7 @@
 layout: post
 title: "Programar por el amor a programar"
 tags: rant
+published: false
 ---
 
 ## .--[ 0 - Contexto ]-----------------------------------
